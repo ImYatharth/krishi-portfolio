@@ -7,7 +7,14 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"],
+      "env": [
+        "NEXT_PUBLIC_STRAPI_URL",
+        "STRAPI_API_TOKEN",
+        "REVALIDATION_SECRET",
+        "NEXT_PUBLIC_SITE_URL",
+        "STRAPI_PUBLIC_URL"
+      ]
     },
     "lint": {},
     "clean": {

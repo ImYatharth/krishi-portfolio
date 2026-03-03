@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": "Artist bio and about page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "bio": {
+      "type": "richtext",
+      "required": true
+    },
+    "shortBio": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "profileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "additionalImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-link"
+    },
+    "skills": {
+      "type": "json"
+    }
+  }
+}

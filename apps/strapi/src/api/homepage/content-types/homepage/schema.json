@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": "Homepage content and configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "heroSubtitle": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "featuredArtworks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::artwork.artwork"
+    },
+    "aboutPreviewText": {
+      "type": "text",
+      "maxLength": 300
+    },
+    "ctaText": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "ctaLink": {
+      "type": "string",
+      "maxLength": 300
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_submissions",
+  "info": {
+    "singularName": "contact-submission",
+    "pluralName": "contact-submissions",
+    "displayName": "Contact Submission",
+    "description": "Form submissions from the contact page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "subject": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "inquiryType": {
+      "type": "enumeration",
+      "enum": ["commission", "collaboration", "print-purchase", "general"],
+      "default": "general"
+    },
+    "isRead": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

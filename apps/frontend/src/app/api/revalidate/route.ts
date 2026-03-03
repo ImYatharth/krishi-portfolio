@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     };
 
     const tags = tagMap[model] || [];
-    tags.forEach((tag) => revalidateTag(tag));
+    tags.forEach((tag) => revalidateTag(tag, { expire: 0 }));
 
     return NextResponse.json({ revalidated: true, tags });
   } catch {

@@ -5,21 +5,29 @@ import { getAbout } from "@/lib/queries";
 import { getStrapiImageUrl } from "@/lib/utils";
 import FadeIn from "@/components/animations/FadeIn";
 import type { Metadata } from "next";
-import type { SocialLink } from "@/lib/types";
+import type { SocialLink, StrapiImage } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "About | yourstruly.krishi",
   description: "Learn more about Krishi — a digital artist and illustrator exploring the boundaries of visual storytelling.",
 };
 
-const fallbackAbout = {
+const fallbackAbout: {
+  headline: string;
+  bio: string;
+  shortBio: string;
+  profileImage: StrapiImage | null;
+  additionalImages: StrapiImage[];
+  socialLinks: SocialLink[];
+  skills: string[];
+} = {
   headline: "The Artist Behind the Work",
   bio: "A passionate digital artist exploring the intersection of technology and traditional art forms. Through vibrant illustrations and atmospheric compositions, I aim to create pieces that evoke emotion and tell stories without words.",
   shortBio: "Digital artist & illustrator based in India, creating atmospheric and evocative artwork.",
-  profileImage: null as null,
-  additionalImages: [] as never[],
+  profileImage: null,
+  additionalImages: [],
   socialLinks: [
-    { id: 1, platform: "instagram" as const, url: "https://instagram.com/yourstruly.krishi", label: "Instagram" },
+    { id: 1, platform: "instagram", url: "https://instagram.com/yourstruly.krishi", label: "Instagram" },
   ],
   skills: ["Digital Painting", "Illustration", "Concept Art", "Character Design", "Visual Storytelling"],
 };
